@@ -6,7 +6,7 @@ OCRtool is a CEP extension for Adobe InDesign that performs optical character re
 
 ## Demo Video
 
-[![Watch the demo](https://img.shields.io/badge/▶_Watch_demo_video-OCRTool_in_action-d4610a?style=flat-square)](docs/ocrtool-demo.mp4)
+▶ [Watch demo on YouTube](https://youtu.be/9fzz-ZVQpeE) · [Watch in repository](docs/ocrtool-demo.mp4)
 
 ## Features
 
@@ -74,7 +74,7 @@ OCRTool/
 ├── css/styles.css
 ├── docs/                # User guide, purchase page, demo video
 │   ├── purchase.html    # Buy Full Version landing page
-│   ├── ocrtool-demo.mp4 # Demo video
+│   ├── ocrtool-demo.mp4 # Demo video (watch on GitHub)
 │   └── OCRTool-User-Guide.md
 ├── icons/               # Panel icons
 ├── js/
