@@ -1,0 +1,297 @@
+:root {
+  --bg:         #1c1814;
+  --surface:    #252018;
+  --control:    #2e2820;
+  --border:     #4a3520;
+  --border-focus: #d4610a;
+  --accent:     #d4610a;
+  --accent-h:   #b84f07;
+  --accent-dim: #7a3808;
+  --text:       #f0e4d0;
+  --text-dim:   #a89070;
+  --text-label: #c8a878;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 12px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#app {
+  padding: 8px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--accent-dim);
+}
+
+.header h1 {
+  font-size: 15px;
+  margin: 0;
+  color: var(--accent);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Status badge ── */
+.status {
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--control);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+
+.status.status-running {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.status.status-stopped {
+  background: var(--control);
+  color: var(--text-dim);
+  border-color: var(--border);
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Labels ── */
+label {
+  font-size: 11px;
+  color: var(--text-label);
+}
+
+/* ── Form controls ── */
+select,
+textarea {
+  width: 100%;
+  background: var(--control);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 3px;
+  padding: 3px 5px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+select:focus,
+textarea:focus {
+  border-color: var(--border-focus);
+}
+
+textarea {
+  resize: none;
+  height: 72px;
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* ── Buttons ── */
+.btn {
+  padding: 4px 12px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent-h);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary:hover  { background: var(--accent-h); }
+.btn-primary:disabled { opacity: 0.4; cursor: default; }
+
+.btn-secondary {
+  background: var(--control);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover   { border-color: var(--accent); color: var(--accent); }
+.btn-secondary:disabled { opacity: 0.4; cursor: default; }
+
+/* ── Upgrade / Full Version button ── */
+.btn-upgrade {
+  background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
+  border: 1px solid #4a7c23;
+  color: #b8e986;
+  font-weight: 700;
+  padding: 6px 12px;
+  width: 100%;
+}
+
+.btn-upgrade:hover {
+  background: linear-gradient(135deg, #3a6b1e 0%, #243d0f 100%);
+  border-color: #5a9c2b;
+  color: #d4ff9e;
+}
+
+.section-upgrade { margin-top: 4px; }
+
+/* ── Icon button (About ?) ── */
+.btn-icon {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-label);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-icon:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── About overlay ── */
+#about-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#about-box {
+  background: var(--surface);
+  border: 1px solid var(--accent-dim);
+  border-radius: 5px;
+  width: 90%;
+  max-width: 280px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-title-bar {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.about-product {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.about-ver {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.about-desc {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.about-copy {
+  font-size: 11px;
+  color: var(--text-label);
+  margin: 4px 0 0;
+}
+
+.about-email {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.about-email:hover { text-decoration: underline; }
+
+.about-hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 4px 0;
+}
+
+.about-guide-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-label);
+  margin: 0 0 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about-guide {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin: 0;
+  padding-left: 16px;
+  line-height: 1.6;
+}
+
+.about-guide strong { color: var(--text); }
+.about-guide em     { color: var(--accent); font-style: normal; }
+
+.about-upgrade-text {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin: 0 0 4px;
+}

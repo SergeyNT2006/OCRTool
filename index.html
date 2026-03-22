@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OCRtool</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>OCRtool</h1>
+      <div class="header-right">
+        <span class="status" id="status-indicator">Stopped</span>
+        <button id="about-btn" class="btn-icon" title="About">?</button>
+      </div>
+    </header>
+
+    <section class="section">
+      <label for="language-select">Language</label>
+      <select id="language-select">
+        <option value="">(loading…)</option>
+      </select>
+    </section>
+
+    <section class="section" id="lang2-section" style="display:none">
+      <label for="language2-select">Second language</label>
+      <select id="language2-select">
+        <option value="">(none)</option>
+      </select>
+    </section>
+
+    <section class="section">
+      <button id="refresh-langs-btn" class="btn btn-secondary">Refresh languages</button>
+    </section>
+
+    <section class="section" id="scripts-section" style="display:none">
+      <label>
+        <input type="checkbox" id="include-scripts-cb" />
+        Include script / handwriting models
+      </label>
+    </section>
+
+    <section class="section">
+      <label for="style-select">Paragraph style</label>
+      <select id="style-select">
+        <option value="">(loading…)</option>
+      </select>
+      <button id="refresh-styles-btn" class="btn btn-secondary">Refresh styles</button>
+    </section>
+
+    <section class="section section-row">
+      <button id="start-btn" class="btn btn-primary">Start</button>
+      <button id="stop-btn" class="btn btn-secondary" disabled>Stop</button>
+    </section>
+
+    <section class="section section-upgrade">
+      <button id="upgrade-btn" class="btn btn-upgrade" title="Get full version without watermark">★ Get Full Version — $25</button>
+    </section>
+
+    <section class="section">
+      <label>Log</label>
+      <textarea id="log" readonly></textarea>
+    </section>
+  </div>
+
+  <!-- About overlay -->
+  <div id="about-overlay">
+    <div id="about-box">
+      <div class="about-header">
+        <span class="about-title-bar">About OCRtool</span>
+        <button id="about-close-btn" class="btn-icon" title="Close">✕</button>
+      </div>
+      <div class="about-body">
+        <p class="about-product">OCRtool <span class="about-ver">v1.1.0</span></p>
+        <p class="about-desc">Screen OCR extension for Adobe InDesign</p>
+        <p class="about-desc">Windows 10 / 11 only &nbsp;·&nbsp; InDesign 2022–2026</p>
+        <p class="about-copy">© 2026 Sergey A Inozemtsev</p>
+        <a class="about-email" href="mailto:ryzl@hotmail.com">ryzl@hotmail.com</a>
+        <hr class="about-hr" />
+        <p class="about-guide-title">How to use</p>
+        <ol class="about-guide">
+          <li>Select language, press <strong>Start</strong></li>
+          <li>Draw a rectangle over text in the document</li>
+          <li>Recognized text appears in a new frame on <em>OCR_layer</em></li>
+          <li>Press <strong>Stop</strong> when done</li>
+        </ol>
+        <hr class="about-hr" />
+        <p class="about-upgrade-text">Remove watermark and get full OCR quality</p>
+        <button id="about-upgrade-btn" class="btn btn-upgrade">★ Get Full Version — $25</button>
+      </div>
+      <button id="about-ok-btn" class="btn btn-primary">Close</button>
+    </div>
+  </div>
+
+  <script src="js/CSInterface.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

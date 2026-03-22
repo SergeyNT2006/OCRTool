@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OCRTool — User Guide</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 210mm; margin: 0 auto; padding: 20mm; line-height: 1.5; color: #333; }
+    h1 { font-size: 24pt; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 0; }
+    h2 { font-size: 14pt; margin-top: 24px; }
+    p { margin: 12px 0; }
+    ul { margin: 12px 0; padding-left: 24px; }
+    li { margin: 6px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+    th { background: #f5f5f5; font-weight: bold; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 24px 0; }
+    .intro { font-size: 11pt; }
+    @media print { body { padding: 15mm; } }
+  </style>
+</head>
+<body>
+
+<h1>OCRTool — User Guide</h1>
+
+<p class="intro">OCRtool turns text visible on your screen into editable InDesign text. Draw a rectangle to mark the area around any text—in a PDF, image, or webpage—then the extension runs OCR for that area and inserts the result into your document.</p>
+
+<hr>
+
+<h2>Requirements</h2>
+<ul>
+  <li><strong>Adobe InDesign</strong> 2022 (17.x) through 2026 (21.x)</li>
+  <li><strong>Windows 10/11</strong> only</li>
+  <li>Screen content with readable text (scans, PDFs, screenshots, web pages)</li>
+</ul>
+
+<hr>
+
+<h2>Installation</h2>
+<ol>
+  <li>Close InDesign if it is running.</li>
+  <li>Install the extension from Adobe Exchange, or double‑click the <code>.zxp</code> file if you have it locally.</li>
+  <li>Launch InDesign.</li>
+  <li>Open the panel: <strong>Window → Extensions → OCRtool</strong>.</li>
+  <li>Dock the panel where it suits your workspace.</li>
+</ol>
+
+<hr>
+
+<h2>Quick Start</h2>
+<ol>
+  <li><strong>Set up OCRect style</strong> (once per InDesign session): In the <strong>Object Styles</strong> panel, right‑click <strong>OCRect</strong> → <strong>Default Graphic Frame Style</strong>.</li>
+  <li><strong>Start OCR</strong>: Click <strong>Start</strong> in the OCRtool panel.</li>
+  <li><strong>Draw a rectangle</strong>: Create a graphic frame around the text you want to capture. It will get a red stroke (OCRect style).</li>
+  <li><strong>Capture</strong>: Click elsewhere to deselect the frame. OCRtool recognizes the text from the marked area and creates a text frame with the result.</li>
+  <li><strong>Stop</strong>: Click <strong>Stop</strong> when finished.</li>
+</ol>
+
+<hr>
+
+<h2>Panel Options</h2>
+<table>
+  <tr><th>Option</th><th>Description</th></tr>
+  <tr><td><strong>Language</strong></td><td>Primary language for recognition (Tesseract).</td></tr>
+  <tr><td><strong>Second language</strong></td><td>Optional; useful for mixed-language content.</td></tr>
+  <tr><td><strong>Paragraph style</strong></td><td>Style applied to the inserted text.</td></tr>
+  <tr><td><strong>Refresh languages</strong></td><td>Reload available languages from the engine.</td></tr>
+  <tr><td><strong>Refresh styles</strong></td><td>Reload paragraph styles from the document.</td></tr>
+  <tr><td colspan="2"><strong>Language packs:</strong> The extension includes English and German. For additional Tesseract languages, download the language data (<code>.traineddata</code> files) from the <a href="https://github.com/tesseract-ocr/tessdata">Tesseract GitHub</a> and place them in the extension's <code>tessdata</code> folder, then click <strong>Refresh languages</strong>.</td></tr>
+</table>
+
+<hr>
+
+<h2>Tips for Better Results</h2>
+<ul>
+  <li><strong>Image quality</strong>: Clear, high-contrast text works best. Blurry or low-resolution text may be misrecognized.</li>
+  <li><strong>Language</strong>: Set the correct language before capture. Wrong language can cause many errors.</li>
+  <li><strong>Frame size</strong>: Draw the frame close around the text to avoid capturing extra clutter.</li>
+  <li><strong>Overlapping windows</strong>: Make sure the source content is visible and not covered by other windows when you deselect.</li>
+  <li><strong>Multiple captures</strong>: Capture text in order if you need a specific sequence in the layout.</li>
+</ul>
+
+<hr>
+
+<h2>Typical Workflows</h2>
+<p><strong>Scanned documents or images:</strong> Place the image in InDesign, draw frames over each text block, and capture. Each block becomes an editable text frame.</p>
+<p><strong>PDFs:</strong> Open the PDF in a viewer, position it on screen, then use OCRtool to capture text regions and insert them into your InDesign document.</p>
+<p><strong>Web pages or references:</strong> Display the content on screen, draw frames around the needed text, and capture into InDesign.</p>
+
+<hr>
+
+<h2>Troubleshooting</h2>
+<table>
+  <tr><th>Problem</th><th>Solution</th></tr>
+  <tr><td><strong>Panel doesn't appear</strong></td><td>Check <strong>Window → Extensions → OCRtool</strong>. Restart InDesign if needed.</td></tr>
+  <tr><td><strong>Red rectangle not found</strong></td><td>Ensure the frame is visible on screen when you deselect. Minimize or move overlaying windows.</td></tr>
+  <tr><td><strong>Wrong or garbled text</strong></td><td>Choose the correct language for the content.</td></tr>
+  <tr><td><strong>Languages list is empty</strong></td><td>Click <strong>Refresh languages</strong>. For Tesseract, ensure language data is installed (English and German are included; other languages: download from <a href="https://github.com/tesseract-ocr/tessdata">Tesseract tessdata</a> and place in the extension's <code>tessdata</code> folder).</td></tr>
+  <tr><td><strong>Styles list is empty</strong></td><td>Create at least one paragraph style in the document, then click <strong>Refresh styles</strong>.</td></tr>
+  <tr><td><strong>OcrHelper.exe not found</strong></td><td>Reinstall the extension. The executable should be in the extension's <code>bin</code> folder.</td></tr>
+</table>
+
+<hr>
+
+<h2>Support</h2>
+<p>For questions or issues, contact Sergey Inozemtsev at <a href="mailto:ryzl@hotmail.com">ryzl@hotmail.com</a>.</p>
+
+<hr>
+<p><em>Copyright 2025 Sergey Inozemtsev. All rights reserved.</em></p>
+
+</body>
+</html>

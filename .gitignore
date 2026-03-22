@@ -1,0 +1,23 @@
+# CEP / InDesign Extension
+.debug
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build / binaries (optional: include OcrHelper-demo.exe for demo distribution)
+# bin/
+
+# Temporary
+*.tmp
+*.temp
+*.bak

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  OCRtool — Adobe InDesign CEP Extension
+  Author:  Sergey A Inozemtsev
+  Version: 1.1.0
+  Targets: InDesign 2022 (17.x) – InDesign 2026 (21.x)
+           Windows 10 / Windows 11
+-->
+<ExtensionManifest Version="7.0"
+    ExtensionBundleId="com.inozemtsev.ocrtool"
+    ExtensionBundleVersion="1.1.0"
+    ExtensionBundleName="OCRtool" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Author><![CDATA[Sergey Inozemtsev]]></Author>
+  <Contact mailto="ryzl@hotmail.com"/>
+  <Legal><![CDATA[Copyright 2025 Sergey Inozemtsev. All rights reserved.]]></Legal>
+  <Abstract><![CDATA[OCR extension for Adobe InDesign (Windows 10/11 only). Recognizes text from a user-marked region and inserts the result into the document. Uses the Tesseract engine and supports multiple languages.]]></Abstract>
+  <ExtensionList>
+    <Extension Id="com.inozemtsev.ocrtool.panel"/>
+  </ExtensionList>
+
+  <ExecutionEnvironment>
+    <HostList>
+      <!-- InDesign 2022 = 17.x  |  2023 = 18.x  |  2024 = 19.x  |  2025 = 20.x  |  2026 = 21.x -->
+      <Host Name="IDSN" Version="[17.0,21.0]"/>
+    </HostList>
+    <OSList>
+      <OS Name="Windows"/>
+    </OSList>
+    <LocaleList>
+      <Locale Code="All"/>
+    </LocaleList>
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="9.0"/>
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+
+  <DispatchInfoList>
+    <Extension Id="com.inozemtsev.ocrtool.panel">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./index.html</MainPath>
+          <ScriptPath>./js/hostscript.jsx</ScriptPath>
+          <CEFCommandLine/>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>OCRtool</Menu>
+          <Geometry>
+            <Size>
+              <Width>320</Width>
+              <Height>260</Height>
+            </Size>
+            <MinSize>
+              <Width>260</Width>
+              <Height>220</Height>
+            </MinSize>
+            <MaxSize>
+              <Width>800</Width>
+              <Height>800</Height>
+            </MaxSize>
+          </Geometry>
+          <Icons>
+						<Icon Type="Normal">./icons/icon_normal.png</Icon>
+						<Icon Type="Rollover">./icons/icon_rollover.png</Icon>
+						<Icon Type="DarkNormal">./icons/icon_dark_normal.png</Icon>
+						<Icon Type="DarkRollover">./icons/icon_dark_rollover.png</Icon>
+		</Icons>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+
+</ExtensionManifest>
