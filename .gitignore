@@ -2,6 +2,9 @@
 .debug
 *.log
 
+# Author-only (not for public repo)
+docs/PURCHASE-SETUP.md
+
 # OS
 .DS_Store
 Thumbs.db
