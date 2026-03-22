@@ -53,7 +53,7 @@ The full version removes the watermark and delivers clean OCR text. **$25 USD** 
 | `[demo mode]` in output | No watermarks |
 | OcrHelper-demo.exe | OcrHelper.exe |
 
-**[→ Buy Full Version — $25](docs/purchase.html)** — PayPal payment. Download link sent by email within 24 hours.  
+**[→ Buy Full Version — $25](https://sergeynt2006.github.io/OCRTool/purchase.html)** — PayPal payment. Download link sent by email within 24 hours.  
 *(Authors: see [docs/PURCHASE-SETUP.md](docs/PURCHASE-SETUP.md) for PayPal setup.)*
 
 ## Required Assets
