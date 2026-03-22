@@ -4,6 +4,10 @@ OCRtool is a CEP extension for Adobe InDesign that performs optical character re
 
 > **This repository contains the Demo version.** The demo applies a watermark (~10% of characters replaced with `*`, plus `[demo mode]` in the text). [**Get Full Version — $25**](#get-full-version) for clean OCR output.
 
+## Demo Video
+
+[![Watch the demo](https://img.shields.io/badge/▶_Watch_demo_video-OCRTool_in_action-d4610a?style=flat-square)](docs/ocrtool-demo.mp4)
+
 ## Features
 
 - **Region OCR**: Draw a rectangle in InDesign to mark the area you want to recognize, then OCRtool runs OCR for that area and creates a text frame with the result.
@@ -68,8 +72,9 @@ The full version removes the watermark and delivers clean OCR text. **$25 USD** 
 OCRTool/
 ├── CSXS/manifest.xml    # CEP extension manifest
 ├── css/styles.css
-├── docs/                # User guide, purchase page
+├── docs/                # User guide, purchase page, demo video
 │   ├── purchase.html    # Buy Full Version landing page
+│   ├── ocrtool-demo.mp4 # Demo video
 │   └── OCRTool-User-Guide.md
 ├── icons/               # Panel icons
 ├── js/
