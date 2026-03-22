@@ -10,7 +10,7 @@
 
   // Purchase page URL — use your GitHub Pages link or direct Gumroad product URL
   // Example: "https://YOUR_USERNAME.github.io/OCRTool/docs/purchase.html"
-  var PURCHASE_URL = "https://YOUR_USERNAME.github.io/OCRTool/docs/purchase.html";
+  var PURCHASE_URL = "https://github.com/SergeyNT2006/OCRTool/docs/purchase.html";
 
   function $(id) {
     return document.getElementById(id);
